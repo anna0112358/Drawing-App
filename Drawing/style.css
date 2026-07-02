@@ -1,0 +1,163 @@
+:root { /* REQUIREMENT css rule 1/10 */
+    --tan: #dac8b5;
+    --brown: #856140;
+}
+html, body, main { /* REQUIREMENT css rule 2/10 */
+    color: var(--brown);
+    height: 100%;
+    font-family: sans-serif;
+}
+body { /* REQUIREMENT css rule 3/10 */
+    background-color: var(--tan);
+}
+.Circle { /* REQUIREMENT css rule 4/10 */
+    border-radius: 50%;
+    position: absolute;
+}
+.Rectangle { /* REQUIREMENT css rule 5/10 */
+    width: 100px;
+    height: 100px;
+    position: absolute;
+}
+#cursor { /* REQUIREMENT css rule 6/10 */
+    position: absolute;
+    box-sizing: border-box;
+    pointer-events: none;
+    opacity: 40%;
+}
+#drawingArea { /* REQUIREMENT css rule 7/10 */
+    background-color: white;
+    border-radius: 4px;
+    overflow: hidden;
+}
+.textEntry, select { /* REQUIREMENT css rule 8/10 */
+    color: var(--brown);
+    border-style: none none solid none;
+    border-color: var(--brown);
+    border-bottom-width: 1px;
+    background-color: var(--tan);
+}
+.colorField { /* REQUIREMENT css rule 9/10 */
+    background-color: var(--tan);
+    border: none;
+}
+button, a { /* REQUIREMENT css rule 10/10 */
+    color: var(--tan);
+    background-color: var(--brown);
+    border: 1px solid var(--brown);
+    padding: 10px;
+    border-radius: 3px;
+}
+button:hover, a {
+    color: var(--brown);
+    background-color: var(--tan);
+}
+
+#homeBody #newDrawing {
+    background-color: var(--brown);
+    color: var(--tan);
+    text-decoration: none;
+    padding: 20px;
+    border-radius: 4px;
+}
+
+#homeBody #newDrawing:hover {
+    background-color: var(--tan);
+    color: var(--brown);
+    border: 1px solid var(--brown);
+}
+
+#homeBody h2 {
+    color: var(--brown);
+    padding: 20px;
+}
+
+#savedDrawings a {
+    padding: 20px;
+    text-decoration: none;
+}
+
+#savedDrawings a:hover {
+    background-color: var(--brown);
+    color: var(--tan)
+}
+
+/* Computer Screen */
+@media only screen and (min-width: 769px) {
+    #homeBody {
+        display: grid;
+        grid-template-columns: 300px 1fr;
+        background-color: var(--tan);
+        font-family: sans-serif;
+        padding: 10px 20px;
+    }
+
+    main {
+        display: grid; /* REQUIREMENT css grid */
+        grid-template-columns: 300px 1fr;
+    }
+    #homeBody #newDrawing {
+        position: relative;
+        top: 30px;
+    }
+    #homeBody h2 {
+        margin: 0px;
+    }
+    #savedDrawings {
+        display: flex; /* REQUIREMENT css flexbox */
+        flex-wrap: wrap;
+    }
+    #savedDrawings a {
+        margin-right: 5px;
+        margin-bottom: 5px;
+    }
+    form div {
+        display: block;
+        margin: 20px;
+    }
+    html, body, main {
+        overflow: hidden;
+    }
+}
+
+/* Tablet */
+@media only screen and (max-width: 768px) { /* REQUIREMENT media query 1/2 */
+    main {
+        position: relative;
+        top: 30px;
+    }
+    #newDrawing {
+        display: block;
+    }
+    #savedDrawings a {
+        display: block;
+        margin-bottom: 5px;
+    }
+    form {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        margin: 5px;
+    }
+    #title {
+        grid-column-start: 1;
+        grid-column-end: 4;
+    }
+    form div{
+        margin: 10px;
+    }
+    #save, #homeButton {
+        margin: 10px;
+    }
+}
+
+/*Phone*/
+@media only screen and (max-width: 400px) {/* REQUIREMENT media query 2/2 */
+    form {
+        display: block;
+    }
+
+    form div {
+        display: block;
+    }
+}
+
